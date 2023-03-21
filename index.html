@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en">
+<html lang="es">
 
 <head>
   <meta charset="UTF-8" />
@@ -11,12 +11,17 @@
 
 <body>
   <main class="main" id="main">
-    <div class="asd"></div>
+
+    <button class="btn_shiny" id="btn_shiny">
+      <img src="public/disk-svgrepo-com.svg" alt="">
+    </button>
+
+    <div id="replace"></div> <!-- Se utiliza para renderizar la card-->
+
     <div class="btn_container">
-      <button class="btn" id="btn_shiny">Shiny</button>
-      <button class="btn" id="btn_prev">Prev</button>
-      <button class="btn" id="btn_random">Random</button>
-      <button class="btn" id="btn_next">Next</button>
+      <button class="btn" id="btn_prev"><img src="public/arrow-left-circle-svgrepo-com.svg" alt="" class="btn_img"></button>
+      <button class="btn" id="btn_random"><img class="btn_img" src="public/help-circle-svgrepo-com.svg" alt=""></button>
+      <button class="btn" id="btn_next"><img src="public/arrow-right-circle-svgrepo-com.svg" alt="" class="btn_img"></button>
     </div>
   </main>
 
@@ -28,7 +33,8 @@
 
         <div class="title_container">
           <h1 class="title_name" id="name"></h1>
-          <span class="title_nro" id="nro"></span>
+          <span class="poke_id" id="poke_id"></span>
+
         </div>
 
         <!-- Sprite del pokemon -->
@@ -51,53 +57,52 @@
 
         <div class="stats-container">
           <table class="stats_container">
-            <tr>
+            <tr class="stat_item">
               <td class="stat_name">HP</td>
               <td class="stat_value" id="hp_value"></td>
               <td class="stat_bar">
-                <progress class="progress" id="hp_progress" max="100"></progress>
+                <progress class="progress" id="hp_progress" max="255"></progress>
               </td>
             </tr>
-            <tr>
+            <tr class="stat_item">
               <td class="stat_name">ATK</td>
               <td class="stat_value" id="atk_value"></td>
               <td class="stat_bar">
-                <progress class="progress" id="hp_progress" max="100"></progress>
+                <progress class="progress" id="atk_progress" max="255"></progress>
               </td>
             </tr>
-            <tr>
+            <tr class="stat_item">
               <td class="stat_name">DEF</td>
               <td class="stat_value" id="def_value"></td>
               <td class="stat_bar">
-                <progress class="progress" id="hp_progress" max="100"></progress>
+                <progress class="progress" id="def_progress" max="255"></progress>
               </td>
             </tr>
-            <tr>
+            <tr class="stat_item">
               <td class="stat_name">S.ATK</td>
-              <td class="stat_value" id="atk_spc_value"></td>
+              <td class="stat_value" id="satk_value"></td>
               <td class="stat_bar">
-                <progress class="progress" id="hp_progress" max="100"></progress>
+                <progress class="progress" id="satk_progress" max="255"></progress>
               </td>
             </tr>
-            <tr>
+            <tr class="stat_item">
               <td class="stat_name">S.DEF</td>
-              <td class="stat_value" id="def_spc_value"></td>
+              <td class="stat_value" id="sdef_value"></td>
               <td class="stat_bar">
-                <progress class="progress" id="hp_progress" max="100"></progress>
+                <progress class="progress" id="sdef_progress" max="255"></progress>
               </td>
             </tr>
-            <tr>
+            <tr class="stat_item">
               <td class="stat_name">SPD</td>
-              <td class="stat_value" id="speed_value"></td>
+              <td class="stat_value" id="spd_value"></td>
               <td class="stat_bar">
-                <progress class="progress" id="hp_progress" max="100"></progress>
+                <progress class="progress" id="spd_progress" max="255"></progress>
               </td>
             </tr>
           </table>
         </div>
       </div>
     </article>
-    <!-- <button class="button" id="button">Otro pokemon</button> -->
   </template>
 
   <script type="module" src="/main.js"></script>
