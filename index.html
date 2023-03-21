@@ -1,0 +1,106 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <link rel="stylesheet" href="style.css">
+  <title>Pokedex</title>
+</head>
+
+<body>
+  <main class="main" id="main">
+    <div class="asd"></div>
+    <div class="btn_container">
+      <button class="btn" id="btn_shiny">Shiny</button>
+      <button class="btn" id="btn_prev">Prev</button>
+      <button class="btn" id="btn_random">Random</button>
+      <button class="btn" id="btn_next">Next</button>
+    </div>
+  </main>
+
+  <!-- TEMPLATE: Datos del pokemon -->
+  <template id="template_data">
+    <article class="card" id="card">
+
+      <div class="head_container">
+
+        <div class="title_container">
+          <h1 class="title_name" id="name"></h1>
+          <span class="title_nro" id="nro"></span>
+        </div>
+
+        <!-- Sprite del pokemon -->
+        <div class="sprite_container" id="sprite_container">
+          <img alt="Pokemon Sprite" class="sprite" id="sprite">
+        </div>
+
+      </div>
+
+
+      <!-- Datos del pokemon -->
+      <div class="info_container" id="info_container">
+
+        <div class="type_container">
+          <span class="type" id="type_1"></span>
+          <span class="type" id="type_2"></span>
+        </div>
+
+        <h3 class="stats_title">Base stats</h3>
+
+        <div class="stats-container">
+          <table class="stats_container">
+            <tr>
+              <td class="stat_name">HP</td>
+              <td class="stat_value" id="hp_value"></td>
+              <td class="stat_bar">
+                <progress class="progress" id="hp_progress" max="100"></progress>
+              </td>
+            </tr>
+            <tr>
+              <td class="stat_name">ATK</td>
+              <td class="stat_value" id="atk_value"></td>
+              <td class="stat_bar">
+                <progress class="progress" id="hp_progress" max="100"></progress>
+              </td>
+            </tr>
+            <tr>
+              <td class="stat_name">DEF</td>
+              <td class="stat_value" id="def_value"></td>
+              <td class="stat_bar">
+                <progress class="progress" id="hp_progress" max="100"></progress>
+              </td>
+            </tr>
+            <tr>
+              <td class="stat_name">S.ATK</td>
+              <td class="stat_value" id="atk_spc_value"></td>
+              <td class="stat_bar">
+                <progress class="progress" id="hp_progress" max="100"></progress>
+              </td>
+            </tr>
+            <tr>
+              <td class="stat_name">S.DEF</td>
+              <td class="stat_value" id="def_spc_value"></td>
+              <td class="stat_bar">
+                <progress class="progress" id="hp_progress" max="100"></progress>
+              </td>
+            </tr>
+            <tr>
+              <td class="stat_name">SPD</td>
+              <td class="stat_value" id="speed_value"></td>
+              <td class="stat_bar">
+                <progress class="progress" id="hp_progress" max="100"></progress>
+              </td>
+            </tr>
+          </table>
+        </div>
+      </div>
+    </article>
+    <!-- <button class="button" id="button">Otro pokemon</button> -->
+  </template>
+
+  <script type="module" src="/main.js"></script>
+</body>
+
+</html>
