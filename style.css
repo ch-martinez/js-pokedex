@@ -1,0 +1,243 @@
+:root {
+  font-family: Arial, Helvetica, sans-serif;
+  background-color: #242424;
+  font-synthesis: none;
+  text-rendering: optimizeLegibility;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+
+  /* constantes de colores */
+  --bug: #A7B723 ;
+  --dark: #75574C;
+  --dragon: #7037FF;
+  --electric: #F9CF30;
+  --fairy: #E69EAC; 
+  --fighting: #C12239;
+  --fire: #F57D31;
+  --flying: #A891EC;
+  --ghost: #70559b;
+  --normal: #AAA67F;
+  --grass: #74CB48;
+  --ground: #DEC16B;
+  --ice: #9AD6DF;
+  --poison: #A43E9E;
+  --psychic: #FB5584;
+  --rock: #B69E31;
+  --steel: #B7B9D0;
+  --water: #6493EB;
+
+  --text-title: #FFFFFF;
+  --tetx-info: #212121;
+}
+
+body {
+  margin: 0;
+  display: flex;
+  place-items: center;
+  justify-content: center;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+
+.main{
+  border-radius: 12px;
+  overflow: hidden;
+}
+
+.card{
+  min-width: 300px;
+}
+
+/* ========= HEAD =========  */
+.head_container{
+  padding: 1rem;
+}
+
+.title_container{
+  display: flex;
+  align-items: baseline;
+  justify-content: space-between;
+  color: var(--text-title);
+}
+
+.title_name{
+  margin: 0;
+  font-size: 1.7rem;
+  text-transform: capitalize;
+}
+
+.title_nro{
+
+}
+
+/* ========= SPRITE =========  */
+
+.sprite_container{
+  display: flex;
+  justify-content: center;
+}
+
+.sprite{
+  width: 200px;
+}
+
+
+/* ========= INFO =========  */
+.info_container{
+  background-color: aliceblue;
+  color: (var(--tetx-info));
+  border-radius: 12px 12px 0 0;
+  padding: 1rem;
+}
+
+.type_container{
+  display: flex;
+  justify-content: center;
+  color: var(--text-title);
+  gap: 0.5rem;
+}
+/* Tipos */
+.type{
+  padding: 2px 6px;
+  border-radius: 4px;
+  font-size: 0.7rem;
+  font-weight: 900;
+}
+
+.type-hide{
+  display: none;
+}
+
+
+.btn_container{
+  display: flex;
+  justify-content: space-between;
+}
+
+.btn{
+  border-style: none;
+  height: 30px;
+  width: 100%;
+  background-color: aliceblue;
+  cursor: pointer;
+}
+
+.btn:hover{
+  background-color: #6493EB;
+}
+
+
+/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
+/* Colors type */
+.bug-bg{
+  background-color: var(--bug);
+}
+.dark-bg{
+  background-color: var(--dark);
+}
+.dragon-bg{
+  background-color: var(--dragon);
+}
+.electric-bg{
+  background-color: var(--electric);
+}
+.fairy-bg{
+  background-color: var(--fairy);
+}
+.fighting-bg{
+  background-color: var(--fighting);
+}
+.fire-bg{
+  background-color: var(--fire);
+}
+.flying-bg{
+  background-color: var(--flying);
+}
+.ghost-bg{
+  background-color: var(--ghost);
+}
+.normal-bg{
+  background-color: var(--normal);
+}
+.grass-bg{
+  background-color: var(--grass);
+}
+.ground-bg{
+  background-color: var(--ground);
+}
+.ice-bg{
+  background-color: var(--ice);
+}
+.poison-bg{
+  background-color: var(--poison);
+}
+.psychic-bg{
+  background-color: var(--psychic);
+}
+.rock-bg{
+  background-color: var(--rock);
+}
+.steel-bg{
+  background-color: var(--steel);
+}
+.water-bg{
+  background-color: var(--water);
+}
+
+/* Colors fonts type */
+.bug-font{
+  color: var(--bug);
+}
+.dark-font{
+  color: var(--dark);
+}
+.dragon-font{
+  color: var(--dragon);
+}
+.electric-font{
+  color: var(--electric);
+}
+.fairy-font{
+  color: var(--fairy);
+}
+.fighting-font{
+  color: var(--fighting);
+}
+.fire-font{
+  color: var(--fire);
+}
+.flying-font{
+  background-color: var(--flying);
+}
+.ghost-font{
+  color: var(--ghost);
+}
+.normal-font{
+  color: var(--normal);
+}
+.grass-font{
+  color: var(--grass);
+}
+.ground-font{
+  color: var(--ground);
+}
+.ice-font{
+  color: var(--ice);
+}
+.poison-font{
+  color: var(--poison);
+}
+.psychic-font{
+  color: var(--psychic);
+}
+.rock-font{
+  color: var(--rock);
+}
+.steel-font{
+  color: var(--steel);
+}
+.water-font{
+  color: var(--water);
+}
