@@ -17,6 +17,32 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
+
+const colorize = (clone, pokeData) => {
+  const t1 = pokeData.pokemon.types[0].type.name
+  const t2 = pokeData.pokemon.types[1]?.type.name
+  
+  clone.querySelector('#card').classList.add(`${t1}-bg`)
+  
+  /* Verifica si el pokemon tiene un segundo tipo*/
+  if ( t2 == undefined) {
+    clone.querySelector('#type_2').classList.add('type-hide')
+  }else{
+    clone.querySelector('#type_2').textContent = `${t2}`
+    clone.querySelector('#type_2').classList.add(`${t2}-bg`)
+  }
+  
+  clone.querySelector('#hp_name').classList.add(`${t1}-font`)
+  clone.querySelector('#atk_name').classList.add(`${t1}-font`)
+  clone.querySelector('#def_name').classList.add(`${t1}-font`)
+  clone.querySelector('#satk_name').classList.add(`${t1}-font`)
+  clone.querySelector('#sdef_name').classList.add(`${t1}-font`)
+  clone.querySelector('#spd_name').classList.add(`${t1}-font`)
+    
+  clone.querySelector('#spd_progress').classList.add(`${t1}-bg`)
+  return clone
+}
+
 const renderCard = (pokeData) => {
   const fragment = document.createDocumentFragment()
   const clone = template_data.cloneNode(true)
@@ -31,15 +57,7 @@ const renderCard = (pokeData) => {
   clone.querySelector('#name').textContent = pokeData.pokemon.name
   clone.querySelector('#type_1').textContent = `${pokeData.pokemon.types[0].type.name}`
   clone.querySelector('#type_1').classList.add(`${pokeData.pokemon.types[0].type.name}-bg`)
-  clone.querySelector('#card').classList.add(`${pokeData.pokemon.types[0].type.name}-bg`)
-
-  /* Carga de tags de types y de background */
-  if (pokeData.pokemon.types[1]?.type.name == undefined) {
-    clone.querySelector('#type_2').classList.add('type-hide')
-  }else{
-    clone.querySelector('#type_2').textContent = `${pokeData.pokemon.types[1]?.type.name}`
-    clone.querySelector('#type_2').classList.add(`${pokeData.pokemon.types[1]?.type.name}-bg`)
-  }
+  
 
   /* Carga de stats */
   clone.querySelector('#hp_value').textContent = pokeData.pokemon.stats[0].base_stat
@@ -56,6 +74,8 @@ const renderCard = (pokeData) => {
   clone.querySelector('#satk_progress').setAttribute('value',pokeData.pokemon.stats[3].base_stat)
   clone.querySelector('#sdef_progress').setAttribute('value',pokeData.pokemon.stats[4].base_stat)
   clone.querySelector('#spd_progress').setAttribute('value',pokeData.pokemon.stats[5].base_stat)
+
+  colorize(clone,pokeData)
 
   fragment.appendChild(clone)
   main.replaceChild(fragment,main.children[1])
