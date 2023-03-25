@@ -1,12 +1,13 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap');
+
 :root {
-  font-family: Arial, Helvetica, sans-serif;
+  font-family: 'Montserrat', sans-serif;
   background-color: #242424;
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
   -webkit-text-size-adjust: 100%;
-
   /* constantes de colores */
   --bug: #A7B723 ;
   --dark: #75574C;
@@ -26,14 +27,11 @@
   --rock: #B69E31;
   --steel: #B7B9D0;
   --water: #6493EB;
-
   --text-title: #FFFFFF;
   --tetx-info: #212121;
-
   --g-dark: #212121;
   --g-medium: #666666;
   --g-light: #E0E0E0;
-
 }
 
 *{
@@ -55,7 +53,6 @@ body {
   position: relative;
   overflow: hidden;
   border-radius: 12px;
-
   box-shadow: -1px 0px 32px -4px rgba(0,0,0,0.75);
   -webkit-box-shadow: -1px 0px 32px -4px rgba(0,0,0,0.75);
   -moz-box-shadow: -1px 0px 32px -4px rgba(0,0,0,0.75);
@@ -64,7 +61,6 @@ body {
 .card{
   min-width: 350px;
   padding: 1rem 1rem 0rem;
-
   box-shadow: 1px -124px 139px -146px rgba(0,0,0,1) inset;
   -webkit-box-shadow: 1px -124px 139px -146px rgba(0,0,0,1) inset;
   -moz-box-shadow: 1px -124px 139px -146px rgba(0,0,0,1) inset;
@@ -85,14 +81,14 @@ body {
 }
 
 .poke_id{
-  color:  var(--text-title);
+  color: #e7e7e7;
 }
 
 /* ========= SPRITE =========  */
-
 .sprite_container{
   display: flex;
   justify-content: center;
+  height: 250px;
 }
 
 .sprite-bg{
@@ -104,10 +100,8 @@ body {
 .sprite{
   width: 200px;
   height: 200px;
-  aspect-ratio: auto 200 / 200;
   line-height: 0;
   transform: scale(1.4) translate(0px, 15%);
-
   filter: drop-shadow(1px 0px 9px rgba(0, 0, 0, 0.45));
   -webkit-filter: (1px 0px 9px rgba(0, 0, 0, 0.45));
 }
@@ -121,42 +115,36 @@ body {
 }
 
 .type_container{
-  margin-top: 3rem;
+  margin-top: 1rem;
   display: flex;
   justify-content: center;
   color: var(--text-title);
   gap: 0.5rem;
 }
 
-/* Tipos */
 .type{
   padding: 2px 6px;
   border-radius: 4px;
   font-size: 0.7rem;
-  font-weight: 900;
+  font-weight: 700;
 }
 
 .type-hide{
   display: none;
 }
 
-
-/* ************************************************ */
-
 .stats_title{
   margin: 1rem 0;
-  
+  color: var(--g-medium);
 }
 
 .stats_container{ 
-  border-spacing: 0;
-  margin: 1rem 0;
+  margin: 1rem 0rem;
 }
 
 .stat_item{
   display: flex;
   align-items: center;
-  
 }
 
 .stat_name{
@@ -166,7 +154,6 @@ body {
   padding-right: 0.5rem;
   border-right: 2px solid var(--g-light);
   font-weight: bold;
-  color: var(--fire);
 }
 
 .stat_value{
@@ -175,13 +162,12 @@ body {
 }
 
 .stat_bar{
-  height: 100%;
   display: flex;
   align-items: center;
 }
 
-
 .progress{
+  width: 210px;  
   align-self: center;
   border-radius: 20px;
   height: 6px;
@@ -197,18 +183,15 @@ body {
   border-radius: 20px;
 }
 
-
 .btn_container{
   position: absolute;
   bottom: 0;
   left: 0;
   width: 100%;
   display: flex;
-
   margin-bottom: 1rem;
   justify-content: space-evenly;
 }
-
 
 .btn{
   border-style: none;
@@ -227,19 +210,19 @@ body {
   height: 100%;
 }
 
-.btn_shiny span{
-  
-  color: linear-gradient(0deg, rgba(255,147,15,1) 0%, rgba(255,249,91,1) 35%);
-}
-
 .btn_shiny{
-  border-radius: 100px;
   position: absolute;
-  right: 5%;
+  right: 4%;
   top: 8%;
   width: 30px;
   height: 30px;
+  padding: 0;
+  font-size: 2.5rem;
+  text-align: center;
   z-index: 100;
+  border-radius: 100px;
+  color: var(--g-medium);
+  background: linear-gradient(61deg, rgba(255,147,15,1) 5%, rgba(255,249,91,1) 81%);
 }
 
 .btn_shiny:hover::before {
@@ -268,10 +251,8 @@ body {
   left: 0;
   background: inherit;
   border-radius: inherit;
-}
-        
+}        
 
-/* +++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++++ */
 /* Colors type */
 .bug-bg{
   background-color: var(--bug);
