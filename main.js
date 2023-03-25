@@ -1,9 +1,8 @@
 const main = document.getElementById('main')
-const sprite_container = document.getElementById('sprite_container')
 const template_data = document.getElementById('template_data').content
 const btn_shiny = document.getElementById('btn_shiny')
 
-const limit = 500
+const limit = 800
 let pokeData = {
   pokemon: undefined,
   shiny: false
@@ -17,13 +16,9 @@ function getRandomInt(min, max) {
   return Math.floor(Math.random() * (max - min) + min); // The maximum is exclusive and the minimum is inclusive
 }
 
-
 const colorize = (clone, pokeData) => {
   const t1 = pokeData.pokemon.types[0].type.name
   const t2 = pokeData.pokemon.types[1]?.type.name
-  
-  clone.querySelector('#card').classList.add(`${t1}-bg`)
-  
   /* Verifica si el pokemon tiene un segundo tipo*/
   if ( t2 == undefined) {
     clone.querySelector('#type_2').classList.add('type-hide')
@@ -31,15 +26,13 @@ const colorize = (clone, pokeData) => {
     clone.querySelector('#type_2').textContent = `${t2}`
     clone.querySelector('#type_2').classList.add(`${t2}-bg`)
   }
-  
+  clone.querySelector('#card').classList.add(`${t1}-bg`)
   clone.querySelector('#hp_name').classList.add(`${t1}-font`)
   clone.querySelector('#atk_name').classList.add(`${t1}-font`)
   clone.querySelector('#def_name').classList.add(`${t1}-font`)
   clone.querySelector('#satk_name').classList.add(`${t1}-font`)
   clone.querySelector('#sdef_name').classList.add(`${t1}-font`)
   clone.querySelector('#spd_name').classList.add(`${t1}-font`)
-    
-  clone.querySelector('#spd_progress').classList.add(`${t1}-bg`)
   return clone
 }
 
@@ -57,7 +50,6 @@ const renderCard = (pokeData) => {
   clone.querySelector('#name').textContent = pokeData.pokemon.name
   clone.querySelector('#type_1').textContent = `${pokeData.pokemon.types[0].type.name}`
   clone.querySelector('#type_1').classList.add(`${pokeData.pokemon.types[0].type.name}-bg`)
-  
 
   /* Carga de stats */
   clone.querySelector('#hp_value').textContent = pokeData.pokemon.stats[0].base_stat
